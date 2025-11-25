@@ -25,7 +25,7 @@ body {
 /* The "Frosted Glass" Container */
 .glass-container {
     /* --- DYNAMIC SIZE SETTINGS --- */
-    height: 30vh; /* Takes up 40% of the screen height. Change this number to resize! */
+    height: 20vh; /* Takes up 40% of the screen height. Change this number to resize! */
     width: 95%;   /* Takes up 90% of the screen width */
     max-width: 1000px; /* Stops it from getting too wide on huge monitors */
     
@@ -34,7 +34,8 @@ body {
     flex-direction: column;
     justify-content: center; /* Centers vertical (up/down) */
     align-items: center;     /* Centers horizontal (left/right) */
-    
+    text-align: center;
+
     /* --- STYLE --- */
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
