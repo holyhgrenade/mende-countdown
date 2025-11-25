@@ -23,43 +23,54 @@ body {
 }
 
 /* The "Frosted Glass" Container */
+
 .glass-container {
-    /* --- DYNAMIC SIZE SETTINGS --- */
-    height: 20vh; /* Takes up 40% of the screen height. Change this number to resize! */
-    width: 95%;   /* Takes up 90% of the screen width */
-    max-width: 1000px; /* Stops it from getting too wide on huge monitors */
+    /* --- SIZE SETTINGS --- */
+    /* CHANGE: Use min-height instead of height so it can grow! */
+    min-height: 30vh; 
+    height: auto;     
     
-    /* --- CENTER TEXT INSIDE THE BUBBLE --- */
+    width: 95%;   
+    max-width: 1200px; 
+    
+    /* --- CENTER TEXT --- */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centers vertical (up/down) */
-    align-items: center;     /* Centers horizontal (left/right) */
+    justify-content: center; 
+    align-items: center;     
     text-align: center;
-
+    
     /* --- STYLE --- */
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
     border: 1px solid rgba(255, 255, 255, 0.1);
     
-    /* Prevent text overlapping if screen is very small */
-    min-height: 300px; 
+    /* --- PADDING --- */
+    /* Add padding so the content doesn't touch the edges when it grows */
+    padding: 3rem 1rem; 
 }
 h1 {
-    font-weight: 900; /* Extra Bold */
+    font-weight: 900;
     letter-spacing: 2px;
-    font-size: 2.5rem;
-    margin-bottom: 40px;
+    margin-bottom: 3vh; /* Dynamic margin based on height */
     text-transform: uppercase;
     text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    text-align: center;
+    width: 100%;
+
+    /* --- DYNAMIC FONT SIZE --- */
+    font-size: clamp(1.2rem, 4vw, 3.5rem);
 }
 
 #countdown {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    align-items: center;
+    gap: clamp(10px, 2vw, 30px); /* Dynamic gap between boxes */
+    flex-wrap: wrap; /* Allows wrapping on tiny screens */
+    width: 100%;
 }
 
 /* Individual time boxes */
@@ -68,30 +79,29 @@ h1 {
     flex-direction: column;
     align-items: center;
     background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
     border-radius: 10px;
-    min-width: 120px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* --- DYNAMIC SIZING --- */
+    min-width: clamp(70px, 15vw, 140px); /* Boxes shrink/grow */
+    padding: clamp(10px, 2vw, 25px);      /* Padding shrinks/grows */
 }
 
 .time-box span:first-child {
-    font-size: 4rem;
     font-weight: 700;
     line-height: 1;
+    
+    /* --- DYNAMIC FONT SIZE --- */
+    font-size: clamp(2rem, 6vw, 5rem); 
 }
 
 .label {
-    font-size: 0.9rem;
-    margin-top: 10px;
     font-weight: 300;
     letter-spacing: 1px;
+    margin-top: 5px;
+    
+    /* --- DYNAMIC FONT SIZE --- */
+    font-size: clamp(0.6rem, 1.5vw, 1.2rem);
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    h1 { font-size: 1.5rem; }
-    .glass-container { padding: 1.5rem; }
-    .time-box { min-width: 80px; padding: 10px; }
-    .time-box span:first-child { font-size: 2.5rem; }
-    .label { font-size: 0.7rem; }
-}/* General Reset */
+
