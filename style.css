@@ -19,21 +19,32 @@ body {
     align-items: flex-start;
     justify-content: center;
     color: white;
-    padding-top: 2px;
+    padding-top: 1vh;
 }
 
 /* The "Frosted Glass" Container */
 .glass-container {
-    background: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
-    backdrop-filter: blur(10px); /* This blurs the background image behind the box */
-    padding: 3rem;
+    /* --- DYNAMIC SIZE SETTINGS --- */
+    height: 20vh; /* Takes up 40% of the screen height. Change this number to resize! */
+    width: 90%;   /* Takes up 90% of the screen width */
+    max-width: 1000px; /* Stops it from getting too wide on huge monitors */
+    
+    /* --- CENTER TEXT INSIDE THE BUBBLE --- */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertical (up/down) */
+    align-items: center;     /* Centers horizontal (left/right) */
+    
+    /* --- STYLE --- */
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
     border-radius: 20px;
     box-shadow: 0 15px 25px rgba(0,0,0,0.5);
-    text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    max-width: 90%;
+    
+    /* Prevent text overlapping if screen is very small */
+    min-height: 300px; 
 }
-
 h1 {
     font-weight: 900; /* Extra Bold */
     letter-spacing: 2px;
