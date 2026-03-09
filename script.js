@@ -4,12 +4,7 @@
           hour = minute * 60,
           day = hour * 24;
 
-    // ==========================================================
-    // BEÁLLÍTÁS: Írd át a dátumot itt!
-    // Formátum: "Month Day, Year Hour:Minute:Second"
-    // ==========================================================
-    let targetDate = new Date("April 13, 2026 00:00:00").getTime();
-    // ==========================================================
+    let targetDate = new Date("April 12, 2026 19:00:00").getTime();
 
     const x = setInterval(function() {    
 
